@@ -1,0 +1,187 @@
+html {
+    font-family: sans-serif;
+}  
+
+body {
+    background-color: black;
+    width: 100vw;
+    color: whitesmoke;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+p {
+    color: rgba(255, 255, 255, 0.729);
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0 30% 30%;
+    background-color: rgb(0, 89, 0);
+
+    a {
+        color: rgb(16, 191, 16);
+        text-decoration: none;
+        font-weight: bolder;
+    }
+}
+
+.wrapper {
+    margin: auto;
+    width: 60vw;
+}
+
+.iftime-hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    width: 100%;
+
+    img {
+        border-radius: 50%;
+        width: 100px;
+    }
+}
+
+.iftime-info p:first-of-type {
+    font-weight: bold;
+    color: white;
+}
+
+.iftime-nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    border-radius: 0 0 30% 30%;
+
+    div {
+        padding: .5em;
+        transition: transform .5s;
+    }
+
+
+}
+
+.iftime-nav div p:first-of-type {
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+.compatibilidade {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .compatibilidade-imagem {
+        align-self: center;
+    }
+}
+
+main {
+    margin: auto;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3em;
+    
+    h1 {
+        transition: .5s;
+    }
+}
+
+footer {
+    background-color: rgb(23, 23, 23);
+    padding: 2em;
+    text-align: center;
+    font-size: 12px;
+    border-radius: 40% 40% 0 0;
+}
+
+.compatibilidade-imagem-lg {
+    display: none;
+    width: 100%;
+}
+
+@media screen and (min-width: 50.25em){
+
+    .compatibilidade-imagem{
+        display: none;
+    }
+
+    .compatibilidade-imagem-lg {
+        display: block;
+        grid-area: imagem-lg;
+        grid-row: 1 / span 5;
+
+        img {
+            width: 600px;
+            height: 800px;
+        }
+    }
+
+    .wrapper {
+        width: 80vw;
+    }
+
+    .iftime-hero {
+        justify-content: center;
+        gap: 3em;
+    }
+
+    .iftime-nav {
+        justify-content: center;
+        gap: 4em;
+        text-align: center;
+    }
+
+    main {
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template: 
+        "startup        imagen-lg"
+        "sobre          imagem-lg" 
+        "tecnologia     imagem-lg"
+        "compatibilidade imagem-lg";
+        gap: 0px;
+        
+        grid-template-rows: repeat(4);
+        grid-template-columns: repeat(2, 1fr);
+
+        section {
+            width: 30vw;
+        }
+    }
+
+    .startup {
+        grid-area: startup;
+    }
+
+    .sobre {
+        grid-area: sobre;
+    }
+
+    .tecnologias {
+        grid-area: tecnologia;
+    }
+
+    .compatibilidade {
+        grid-area: compatibilidade;
+    }
+}
+
+/* Trabalhando com efeitos */
+
+main h1:hover {
+    font-size: 36px;
+}
+
+.iftime-nav div:hover {
+    transform: scale(1.3);
+}
