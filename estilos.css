@@ -89,6 +89,7 @@ main {
     flex-direction: column;
     align-items: center;
     gap: 3em;
+    text-align: justify;
     
     h1 {
         transition: .5s;
@@ -120,8 +121,8 @@ footer {
         grid-row: 1 / span 5;
 
         img {
-            width: 600px;
-            height: 800px;
+            width: 500px;
+            height: 600px;
         }
     }
 
